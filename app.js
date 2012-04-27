@@ -6,8 +6,12 @@
 var express = require('express'), 
     routes = require('./routes'),
     proj4js = require('./proj4js-combined'),
-    hodgeproj = require('./hodgeproj4'),
-    defs = require('./defs/EPSG2249.js');
+    hodgeproj = require('./hodgeproj4');
+
+require("fs").readdirSync("./defs").forEach(function(file) {
+  console.log("./defs/" + file);
+  require("./defs/" + file);
+});
 
 var app = module.exports = express.createServer();
 
