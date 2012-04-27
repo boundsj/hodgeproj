@@ -1,0 +1,64 @@
+doctype 5
+html(lang="en")
+  head
+    title="hodgeproj"
+    script(type='text/javascript') {}
+    link(rel='stylesheet', href='http://twitter.github.com/bootstrap/assets/css/bootstrap.css')
+    style(type='text/css')
+      body {
+        padding-top: 90px;
+        padding-bottom: 40px;
+      }
+      .control-label {
+        margin-right: 10px;
+        margin-left: 5px;
+      }
+    link(rel='stylesheet', href='http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css')
+  body
+    div.navbar.navbar-fixed-top
+      div.navbar-inner
+        div.container
+          a.brand(href='#') <h1>HodgeProj</h1>
+
+    div.container
+      div.hero-unit
+        h1 Let's Coordinate!
+        hr 
+        p HodgeProj wraps the proj4js library in butt simple javascript and web APIs. Need to do a quick transformation of coordinates from Massachusets State Plane to WGS84? No more digging around in those messy API documents and sweating those unwieldy command line tools. Just throw those coordinates at HodgeProj. It's easy! Working on a project that could use an API to handle translating points from one coordinate system to another? HodgeProj has you covered there, too.
+
+      div.row
+        div.span6
+          h2 Do it live!  
+          p Use this simple web form to translate your coordinates straight away:
+          form.well.form-inline
+            label.control-label X or Latitude: 
+            input.input-small(type="text", placeholder="37.45")
+            label.control-label Y or Longitude: 
+            input.input-small(type="text", placeholder="-122.45")
+            hr
+            label.control-label From projection: 
+            input.input-small(type="text", placeholder="EPSG2249")
+            label.control-label To projection: 
+            input.input-small(type="text", placeholder="WGS2249")
+            hr 
+            button.btn Translate!
+        div.span6
+          h2 Do it with the API!
+          p Use the HodgeProj API to translate your coordinates:
+          div.well
+            p Using the HodgeProj API is easy. Simply make a call to:
+            p http://hodgeproj.herokuapp.com/api/translate/:LAT/:LON/:FROM/:TO
+
+      div.row
+        div.span12
+          h2 Do it yourself!
+          p Fork this project on github and use the javascript in your own site or create and host your own instance of HodgeProj
+          div.well
+      
+      div.row
+        div.span12
+          h2 FAQ and references
+          p HodgeProj uses the proj4.js library to do all the heavy lifting of the standard projections for various geographical regions. Read all about it!
+          div.well
+
+
